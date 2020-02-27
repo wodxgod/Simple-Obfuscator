@@ -1,2 +1,3 @@
 # Simple-Obfuscator
- Extremely simple Python obfuscator
+
+Extremely simple Python obfuscator
