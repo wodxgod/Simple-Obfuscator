@@ -1,7 +1,3 @@
-# Simple-Obfuscator
-
-Extremely simple Python 3 obfuscator
-
 # Example
 
 Not obfuscated:
