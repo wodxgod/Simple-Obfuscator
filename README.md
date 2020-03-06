@@ -1,6 +1,6 @@
 # Simple-Obfuscator
 
-Extremely simple Python obfuscator
+Extremely simple Python 3 obfuscator
 
 # Example
 
