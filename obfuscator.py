@@ -27,7 +27,7 @@ def obfuscate(content):
         else:
             code += f'{VARIABLE_NAME} += "{_str}"\n'
         index += OFFSET
-    code += f'exec(__import__("\\x62\\x61\\x73\\x65\\x36\\x34").b64decode({VARIABLE_NAME}.encode("\\x75\\x74\\x66\\x2d\\x38")).decode("\\x75\\x74\\x66\\x2d\\x38"))'
+    code += f'exec(__import__("{stringToHex("base64")}").b64decode({VARIABLE_NAME}.encode("{stringToHex("utf-8")}")).decode("{stringToHex("utf-8")}"))'
     return code
 
 
