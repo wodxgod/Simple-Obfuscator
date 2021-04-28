@@ -37,26 +37,29 @@ def main():
     print('###########################')
 
     try:
-        path = argv[1]
-        if not os.path.exists(path):
-            print('[-] File not found')
-            exit()
+        if len(argv) == 2:
+            path = argv[1]
+            if not os.path.exists(path):
+                print('[-] File not found')
+                exit()
 
-        if not os.path.isfile(path) or not path.endswith('.py'):
-            print('[-] Invalid file')
-            exit()
+            if not os.path.isfile(path) or not path.endswith('.py'):
+                print('[-] Invalid file')
+                exit()
 
-        with open(path, 'r', encoding='utf-8', errors='ignore') as file:
-            file_content = file.read()
+            with open(path, 'r', encoding='utf-8', errors='ignore') as file:
+                file_content = file.read()
 
-        obfuscated_content = obfuscate(file_content)
+            obfuscated_content = obfuscate(file_content)
 
-        with open(file=f'{path.split(".")[0]} (obfuscated).py', encoding="utf-8", mode='w') as file:
-            file.write(obfuscated_content)
+            with open(file=f'{path.split(".")[0]} (obfuscated).py', encoding="utf-8", mode='w') as file:
+                file.write(obfuscated_content)
 
-        print('[+] Script has been obfuscated')
-    except:
-        print(f'Usage: py {argv[0]} <file>')
+            print('[+] Script has been obfuscated')
+        else:
+            print(f'Usage: py {argv[0]} <file>')
+    except Exception as err:
+        print(err)
 
 
 if __name__ == '__main__':
