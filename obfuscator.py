@@ -1,5 +1,8 @@
 import os
 import base64
+
+from colorama import Fore
+
 from utils import *
 from sys import argv
 
@@ -29,12 +32,12 @@ def obfuscate(content):
 
 
 def main():
-    print('###########################')
-    print('#                         #')
-    print('#    Simple Obfuscator    #')
-    print('#         by wodx         #')
-    print('#                         #')
-    print('###########################')
+    print('############################')
+    print('#                          #')
+    print('#    Simple Obfuscator     #')
+    print('#  by wodx and JMRaichDev  #')
+    print('#                          #')
+    print('############################')
 
     try:
         if len(argv) == 2:
@@ -47,7 +50,7 @@ def main():
                 print('[-] Invalid file')
                 exit()
 
-            with open(path, 'r', encoding='utf-8', errors='ignore') as file:
+            with open(file=path, mode='r', encoding='utf-8', errors='ignore') as file:
                 file_content = file.read()
 
             obfuscated_content = obfuscate(file_content)
@@ -65,7 +68,7 @@ def main():
         else:
             print(f'Usage: py {argv[0]} <file>')
     except Exception as err:
-        print(err)
+        print(Fore.RED + str(err))
 
 
 if __name__ == '__main__':
