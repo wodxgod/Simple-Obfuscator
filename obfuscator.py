@@ -58,7 +58,7 @@ def main():
             if os.path.exists(f'{path.split(".")[0]} (obfuscated).py'):
                 backup = 0
                 while os.path.exists(f'{path.split(".")[0]} (obfuscated) ~ {backup}.bkp'):
-                    backup =+ 1
+                    backup += 1
                 os.rename(f'{path.split(".")[0]} (obfuscated).py', f'{path.split(".")[0]} (obfuscated) ~ {backup}.bkp')
 
             with open(file=f'{path.split(".")[0]} (obfuscated).py', encoding="utf-8", mode='w') as file:
